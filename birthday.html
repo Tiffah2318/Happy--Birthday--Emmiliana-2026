@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday To My Best Friend 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #ff6b6b;
+            pointer-events: none;
+        }
+
+        .confetti::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 60px 40px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            animation: scaleIn 0.8s ease-out;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .birthday-title {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            animation: titlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            color: #764ba2;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #f093fb);
+            margin: 20px auto 30px;
+            border-radius: 2px;
+        }
+
+        .cake-emoji {
+            font-size: 4em;
+            animation: bounce 2s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .heart {
+            display: inline-block;
+            font-size: 1.5em;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin: 0 5px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .message-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #667eea;
+            text-align: left;
+        }
+
+        .message-title {
+            font-size: 1.8em;
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .message-text {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .special-quotes {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 1.3em;
+            font-style: italic;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .wishes-list {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .wish-item {
+            padding: 12px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #f093fb;
+            color: #333;
+            font-size: 1.05em;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        .wish-item:nth-child(1) { animation-delay: 0.2s; }
+        .wish-item:nth-child(2) { animation-delay: 0.4s; }
+        .wish-item:nth-child(3) { animation-delay: 0.6s; }
+        .wish-item:nth-child(4) { animation-delay: 0.8s; }
+        .wish-item:nth-child(5) { animation-delay: 1s; }
+
+        .closing {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .emoji-scatter {
+            font-size: 2em;
+            display: inline-block;
+            margin: 0 8px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .emoji-scatter:nth-child(2) { animation-delay: 0.3s; }
+        .emoji-scatter:nth-child(3) { animation-delay: 0.6s; }
+        .emoji-scatter:nth-child(4) { animation-delay: 0.9s; }
+        .emoji-scatter:nth-child(5) { animation-delay: 1.2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .signature {
+            margin-top: 30px;
+            font-size: 1.2em;
+            color: #667eea;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .footer-message {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .birthday-title {
+                font-size: 2.5em;
+            }
+            
+            .container {
+                padding: 40px 20px;
+            }
+
+            .message-text {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Title -->
+        <div class="cake-emoji">🎂</div>
+        <h1 class="birthday-title">Happy Birthday! 🎉</h1>
+        <p class="subtitle">To My Amazing Friend</p>
+        
+        <div class="divider"></div>
+
+        <!-- Floating Emojis -->
+        <div style="margin: 20px 0;">
+            <span class="emoji-scatter">✨</span>
+            <span class="emoji-scatter">💝</span>
+            <span class="emoji-scatter">🌟</span>
+            <span class="emoji-scatter">🎊</span>
+            <span class="emoji-scatter">💖</span>
+        </div>
+
+        <!-- Special Message -->
+        <div class="special-quotes">
+            "A friend like you comes once in a lifetime, and I'm so grateful to have you in mine." 
+            <span class="heart">❤️</span>
+        </div>
+
+        <!-- Main Message -->
+        <div class="message-box">
+            <div class="message-title">Why You Mean The World To Me</div>
+            <div class="message-text">
+                Today is YOUR day, and I wanted to take a moment to tell you how much you truly mean to me. 
+                You're not just a friend – you're a blessing in my life. The way you light up every room you 
+                enter, your incredible kindness, and your beautiful soul make the world a better place.
+            </div>
+            <div class="message-text">
+                Every moment we've shared, every laugh we've had, and every time you've been there for me 
+                – I treasure it all. You inspire me to be a better person, and I'm endlessly grateful for your 
+                friendship and love.
+            </div>
+        </div>
+
+        <!-- Wishes List -->
+        <div class="wishes-list">
+            <div class="message-title" style="text-align: center; border: none; color: #764ba2;">My Wishes For You 💫</div>
+            <div class="wish-item">✨ May this year bring you unlimited happiness and joy</div>
+            <div class="wish-item">🌟 May all your dreams and goals come true</div>
+            <div class="wish-item">💖 May you find love, peace, and endless blessings</div>
+            <div class="wish-item">🎯 May you achieve everything your heart desires</div>
+            <div class="wish-item">🌈 May your life be filled with beautiful memories and adventures</div>
+        </div>
+
+        <!-- Special Quote -->
+        <div class="special-quotes">
+            "Thank you for being the person who makes my life richer, brighter, and more meaningful. 
+            I love you more than words can express." 
+            <span class="heart">💕</span>
+        </div>
+
+        <!-- Closing -->
+        <div class="closing">
+            Let's celebrate YOU today and every day! 🎈
+        </div>
+
+        <!-- Signature -->
+        <div class="signature">
+            With all my love and appreciation,
+            <br><br>
+            Your Friend <span class="heart">❤️</span>
+        </div>
+
+        <div class="footer-message">
+            🎂 Make a wish! You deserve everything beautiful! 🎂
+        </div>
+    </div>
+
+    <script>
+        // Create confetti effect
+        function createConfetti() {
+            const confettiCount = 50;
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.backgroundColor = getRandomColor();
+                confetti.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 6000);
+            }
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff6b6b', '#ffd93d', '#6bcf7f', '#4d96ff', '#ff6bf8', '#ffa502'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Trigger confetti on page load and every 8 seconds
+        window.addEventListener('load', () => {
+            createConfetti();
+            setInterval(createConfetti, 8000);
+        });
+
+        // Add sparkle effect on mouse click
+        document.addEventListener('click', (e) => {
+            createSparkles(e.clientX, e.clientY);
+        });
+
+        function createSparkles(x, y) {
+            for (let i = 0; i < 5; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = x + 'px';
+                sparkle.style.top = y + 'px';
+                sparkle.style.fontSize = '1.5em';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.textContent = '✨';
+                sparkle.style.animation = 'sparkleFloat 1s ease-out forwards';
+                document.body.appendChild(sparkle);
+
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        }
+
+        // Add CSS animation for sparkle effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkleFloat {
+                0% {
+                    opacity: 1;
+                    transform: translate(0, 0) scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translate(${Math.random() * 100 - 50}px, -100px) scale(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
